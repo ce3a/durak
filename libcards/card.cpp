@@ -1,4 +1,6 @@
 #include <card.hpp>
+#include <algorithm>
+#include <random>
 
 std::ostream& operator<< (std::ostream &out, const Suit &suit)
 {
@@ -47,6 +49,14 @@ Deck::Deck()
             cards.push_back(Card{s, r});
 
     cards.shrink_to_fit();
+}
+
+void Deck::shuffle()
+{
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+    std::shuffle(cards.begin(), cards.end(), g);
 }
 
 // vim: tabstop=4 shiftwidth=4 softtabstop=4 expandtab

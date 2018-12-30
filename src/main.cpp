@@ -8,8 +8,17 @@ auto main(int argc, char *argv[]) -> int
 
     Deck deck{};
 
-    for (const auto& card: deck)
-        std::cout << card << std::endl;
+    auto print_deck = [&deck]() {
+      for (const auto& card: deck)
+          std::cout << card << std::endl;
+    };
+
+    print_deck();
+
+    deck.shuffle();
+
+    std::cout << "---" << std::endl;
+    print_deck();
 
     return 0;
 }

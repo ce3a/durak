@@ -39,6 +39,7 @@ private:
 
 public:
     Deck();
+    void shuffle();
 
     /* For 'raged-base for' loops */
     auto begin() const { return cards.begin(); }
