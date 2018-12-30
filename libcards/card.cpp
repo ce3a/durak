@@ -69,4 +69,11 @@ void Deck::shuffle()
     std::shuffle(cards.begin(), cards.end(), g);
 }
 
+Card Deck::draw()
+{
+    Card card = cards.back();
+    cards.pop_back();
+    return card;
+}
+
 // vim: tabstop=4 shiftwidth=4 softtabstop=4 expandtab

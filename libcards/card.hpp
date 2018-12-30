@@ -42,6 +42,7 @@ public:
     bool empty() const;
     int  size()  const;
     void shuffle();
+    Card draw();
 
     /* For 'raged-base for' loops */
     auto begin() const { return cards.begin(); }
