@@ -3,6 +3,9 @@
 
 auto main(int argc, char *argv[]) -> int
 {
+    (void)argc;
+    (void)argv;
+
     Deck deck{};
 
     for (const auto& card: deck)

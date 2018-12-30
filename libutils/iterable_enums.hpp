@@ -46,13 +46,13 @@ operator*(T c)
 }
 
 template<class T> for_iterable_enums<T>
-begin(T c)
+begin(T)
 {
     return T::first;
 }
 
 template<class T> for_iterable_enums<T>
-end(T c)
+end(T)
 {
     return T::last + 1;
 }
