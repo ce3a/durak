@@ -15,17 +15,13 @@ do_clean() {
 do_build() {
   mkdir -p ${BIN_DIR}               && \
   cd ${BIN_DIR}                     && \
-  cmake --graphviz=hello.dot ..     && \
+  cmake ..                          && \
   cmake --build . -- ${MAKE_FLAGS}
 }
 
 do_rebuild() {
   do_clean
-  do_build 
-}
-
-do_graph() {
-  cmake --
+  do_build
 }
 
 do_test() {
