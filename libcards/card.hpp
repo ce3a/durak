@@ -39,6 +39,8 @@ private:
 
 public:
     Deck();
+    bool empty() const;
+    int  size()  const;
     void shuffle();
 
     /* For 'raged-base for' loops */

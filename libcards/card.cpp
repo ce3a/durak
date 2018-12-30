@@ -51,6 +51,16 @@ Deck::Deck()
     cards.shrink_to_fit();
 }
 
+bool Deck::empty() const
+{
+    return cards.empty();
+}
+
+int Deck::size() const
+{
+    return cards.size();
+}
+
 void Deck::shuffle()
 {
     std::random_device rd;
