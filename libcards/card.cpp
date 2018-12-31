@@ -36,6 +36,16 @@ std::ostream& operator<< (std::ostream &out, const Rank &rank)
 Card::Card(Suit suit, Rank rank) :
     _suit(suit), _rank(rank) {}
 
+Suit Card::suit() const
+{
+    return this->_suit;
+}
+
+Rank Card::rank() const
+{
+    return this->_rank;
+}
+
 std::ostream& operator<< (std::ostream& out, const Card& card)
 {
     out << card._rank << " of " << card._suit;

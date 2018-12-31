@@ -29,6 +29,8 @@ private:
 public:
     Card() = delete;
     Card(Suit suit, Rank rank);
+    Suit suit() const;
+    Rank rank() const;
 
     friend std::ostream& operator<< (std::ostream &out, const Card &card);
     friend bool operator==(const Card& lhs, const Card& rhs);
