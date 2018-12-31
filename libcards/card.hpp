@@ -31,6 +31,8 @@ public:
     Card(Suit suit, Rank rank);
 
     friend std::ostream& operator<< (std::ostream &out, const Card &card);
+    friend bool operator==(const Card& lhs, const Card& rhs);
+    friend bool operator!=(const Card& lhs, const Card& rhs);
 };
 
 class Deck {
@@ -43,6 +45,9 @@ public:
     int  size()  const;
     void shuffle();
     Card draw();
+
+    friend bool operator==(const Deck& lhs, const Deck& rhs);
+    friend bool operator!=(const Deck& lhs, const Deck& rhs);
 
     /* For 'raged-base for' loops */
     auto begin() const { return _cards.begin(); }

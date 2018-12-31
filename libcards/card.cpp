@@ -42,6 +42,16 @@ std::ostream& operator<< (std::ostream& out, const Card& card)
     return out;
 }
 
+bool operator==(const Card& lhs, const Card& rhs)
+{
+    return lhs._suit == rhs._suit && lhs._rank == rhs._rank;
+}
+
+bool operator!=(const Card& lhs, const Card& rhs)
+{
+    return !(lhs == rhs);
+}
+
 Deck::Deck()
 {
     for (const auto& s: Suit::first)
@@ -74,6 +84,16 @@ Card Deck::draw()
     Card card = _cards.back();
     _cards.pop_back();
     return card;
+}
+
+bool operator==(const Deck& lhs, const Deck& rhs)
+{
+    return lhs._cards == rhs._cards;
+}
+
+bool operator!=(const Deck& lhs, const Deck& rhs)
+{
+    return !(lhs == rhs);
 }
 
 // vim: tabstop=4 shiftwidth=4 softtabstop=4 expandtab
