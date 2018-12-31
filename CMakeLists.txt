@@ -15,4 +15,9 @@ add_subdirectory(libcards)
 # Executables
 add_subdirectory(src)
 
+# Other targets
+add_custom_target(graph
+    "${CMAKE_COMMAND}" "--graphviz=${CMAKE_PROJECT_NAME}" .
+    WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
+
 # vim: tabstop=4 shiftwidth=4 softtabstop=4 expandtab
