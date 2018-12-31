@@ -23,8 +23,8 @@ std::ostream& operator<< (std::ostream &out, const Rank &rank);
 
 class Card {
 private:
-    Suit suit;
-    Rank rank;
+    Suit _suit;
+    Rank _rank;
 
 public:
     Card() = delete;
@@ -35,7 +35,7 @@ public:
 
 class Deck {
 private:
-    std::vector<Card> cards;
+    std::vector<Card> _cards;
 
 public:
     Deck();
@@ -45,8 +45,8 @@ public:
     Card draw();
 
     /* For 'raged-base for' loops */
-    auto begin() const { return cards.begin(); }
-    auto end()   const { return cards.end();   }
+    auto begin() const { return _cards.begin(); }
+    auto end()   const { return _cards.end();   }
 };
 
 #endif /* LIBCARDS_CARDS_HPP */

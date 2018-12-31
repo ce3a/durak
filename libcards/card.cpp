@@ -34,11 +34,11 @@ std::ostream& operator<< (std::ostream &out, const Rank &rank)
 }
 
 Card::Card(Suit suit, Rank rank) :
-    suit(suit), rank(rank) {}
+    _suit(suit), _rank(rank) {}
 
 std::ostream& operator<< (std::ostream& out, const Card& card)
 {
-    out << card.rank << " of " << card.suit;
+    out << card._rank << " of " << card._suit;
     return out;
 }
 
@@ -46,19 +46,19 @@ Deck::Deck()
 {
     for (const auto& s: Suit::first)
         for (const auto& r: Rank::first)
-            cards.push_back(Card{s, r});
+            _cards.push_back(Card{s, r});
 
-    cards.shrink_to_fit();
+    _cards.shrink_to_fit();
 }
 
 bool Deck::empty() const
 {
-    return cards.empty();
+    return _cards.empty();
 }
 
 int Deck::size() const
 {
-    return cards.size();
+    return _cards.size();
 }
 
 void Deck::shuffle()
@@ -66,13 +66,13 @@ void Deck::shuffle()
     std::random_device rd;
     std::mt19937 g(rd());
 
-    std::shuffle(cards.begin(), cards.end(), g);
+    std::shuffle(_cards.begin(), _cards.end(), g);
 }
 
 Card Deck::draw()
 {
-    Card card = cards.back();
-    cards.pop_back();
+    Card card = _cards.back();
+    _cards.pop_back();
     return card;
 }
 
