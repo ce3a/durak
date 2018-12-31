@@ -12,8 +12,10 @@ set(CMAKE_CXX_EXTENSIONS         OFF)
 add_subdirectory(libutils)
 add_subdirectory(libcards)
 
-# Executables
-add_subdirectory(src)
+# Tests
+find_package(Boost REQUIRED COMPONENTS unit_test_framework)
+enable_testing()
+add_subdirectory(tests)
 
 # Other targets
 add_custom_target(graph

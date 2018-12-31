@@ -25,7 +25,8 @@ do_rebuild() {
 }
 
 do_test() {
-  ${BIN_DIR}/src/durak && echo "OK"
+  cd ${BIN_DIR} && \
+  cmake --build . --target test -- CTEST_OUTPUT_ON_FAILURE=ON
 }
 
 usage() {
