@@ -43,6 +43,7 @@ private:
 
 public:
     Deck();
+    Deck(std::initializer_list<Card> il);
     bool empty() const;
     int  size()  const;
     void shuffle();

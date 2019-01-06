@@ -71,6 +71,11 @@ Deck::Deck()
     _cards.shrink_to_fit();
 }
 
+Deck::Deck(std::initializer_list<Card> il)
+{
+    _cards.insert(_cards.begin(), il);
+}
+
 bool Deck::empty() const
 {
     return _cards.empty();

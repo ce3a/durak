@@ -10,6 +10,22 @@ BOOST_AUTO_TEST_CASE(deck_init)
     BOOST_REQUIRE(deck.empty() == false);
 }
 
+BOOST_AUTO_TEST_CASE(deck_init_ilist)
+{
+    Deck deck1({});
+
+    BOOST_CHECK(deck1.size()  == 0);
+    BOOST_CHECK(deck1.empty() == true);
+
+    Deck deck2{
+        Card{Suit::diamonds, Rank::queen},
+        Card{Suit::hearts,   Rank::ace}
+    };
+
+    BOOST_CHECK(deck2.size()  == 2);
+    BOOST_CHECK(deck2.empty() == false);
+}
+
 BOOST_AUTO_TEST_CASE(deck_shuffle)
 {
     Deck deck1{};
