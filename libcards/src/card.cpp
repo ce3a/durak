@@ -1,4 +1,4 @@
-#include <card.hpp>
+#include <cards/card.hpp>
 
 std::ostream& operator<< (std::ostream &out, const Suit &suit)
 {

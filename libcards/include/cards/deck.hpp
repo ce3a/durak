@@ -1,7 +1,7 @@
 #ifndef LIBCARDS_DECK_HPP
 #define LIBCARDS_DECK_HPP
 
-#include <card.hpp>
+#include <cards/card.hpp>
 #include <vector>
 #include <initializer_list>
 

@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <deck.hpp>
+#include <cards/deck.hpp>
 #include <sstream>
 
 BOOST_AUTO_TEST_CASE(deck_init)

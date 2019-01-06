@@ -1,4 +1,4 @@
-#include <deck.hpp>
+#include <cards/deck.hpp>
 #include <algorithm>
 #include <random>
 
