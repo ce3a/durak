@@ -52,9 +52,24 @@ BOOST_AUTO_TEST_CASE(deck_cut)
     Deck deck1{};
     Deck deck2{};
 
+    Card first{Suit::spades, Rank::six};
+    Card last {Suit::clubs,  Rank::ace};
+
     deck2.cut();
     BOOST_CHECK(deck1 != deck2);
     BOOST_CHECK(deck2.size() == 36);
+
+    bool last_found = false;
+    for (const auto& card : deck2) {
+        if (card == last) {
+            last_found = true;
+            continue;
+        }
+        if (last_found) {
+            BOOST_CHECK(card == first);
+            break;
+        }
+    }
 }
 
 BOOST_AUTO_TEST_CASE(deck_draw)
