@@ -30,10 +30,19 @@ BOOST_AUTO_TEST_CASE(deck_shuffle)
 {
     Deck deck1{};
     Deck deck2{};
+    Deck deck3{};
 
     BOOST_CHECK(deck2 == deck1);
+
     deck2.shuffle();
+    deck3.shuffle();
     BOOST_CHECK(deck2 != deck1);
+    BOOST_CHECK(deck2 != deck3);
+
+    Deck deck4 = deck3;
+    deck3.shuffle();
+    BOOST_CHECK(deck3 != deck4);
+
     BOOST_CHECK(deck2.size()  == 36);
     BOOST_CHECK(deck2.empty() == false);
 }
