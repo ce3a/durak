@@ -47,6 +47,16 @@ BOOST_AUTO_TEST_CASE(deck_shuffle)
     BOOST_CHECK(deck2.empty() == false);
 }
 
+BOOST_AUTO_TEST_CASE(deck_cut)
+{
+    Deck deck1{};
+    Deck deck2{};
+
+    deck2.cut();
+    BOOST_CHECK(deck1 != deck2);
+    BOOST_CHECK(deck2.size() == 36);
+}
+
 BOOST_AUTO_TEST_CASE(deck_draw)
 {
     std::ostringstream oss;

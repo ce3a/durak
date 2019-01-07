@@ -34,6 +34,30 @@ void Deck::shuffle()
     std::shuffle(_cards.begin(), _cards.end(), g);
 }
 
+void Deck::cut()
+{
+    auto mean   = _cards.size() / 2;
+    auto stddev = _cards.size() / 6;
+
+    std::random_device seed;
+    std::mt19937 gen(seed());
+    std::normal_distribution<> dist(mean, stddev);
+
+    int n;
+    do {
+        n = dist(gen);
+    } while (n <= 0 || n >= (int)_cards.size());
+
+    std::vector<Card>::const_iterator first = _cards.begin();
+    std::vector<Card>::const_iterator mid   = _cards.begin() + n;
+    std::vector<Card>::const_iterator last  = _cards.end();
+
+    std::vector<Card> tmp(mid, last);
+    tmp.insert(tmp.end(), first, mid);
+
+    _cards.swap(tmp);
+}
+
 Card Deck::draw()
 {
     Card card = _cards.back();

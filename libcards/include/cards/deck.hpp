@@ -15,6 +15,7 @@ public:
     bool empty() const;
     int  size()  const;
     void shuffle();
+    void cut();
     Card draw();
 
     friend bool operator==(const Deck& lhs, const Deck& rhs);
